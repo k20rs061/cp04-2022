@@ -160,8 +160,9 @@
     function init(){
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
-        $('#btnC').prop('disabled', false);
-        
+        //$('#btnC').prop('disabled', false);
+
+        btnCClick(null);
         
     }
 
@@ -208,26 +209,31 @@
         if(active) {
             var time = parseInt((new Date() - startTime)/1000);
             var rest = period - time;
+
+            var m = parseInt(rest/60);
+            var s = parseInt(rest - m*60);
              $("#time").html("経過時間： " + time); 
-             $("#remain").html("残り時間： " + rest);
+             $("#remain").html("残り時間： " + m + "分" + s + "秒");
              analog(rest);
              
-             $('#btnA').prop('disabled', true);
-             $('#btnB').prop('disabled', true);
-        
         }
 
         if(rest <= 0) {
             active = false;
             alarm();
+        }
 
+        if(active) {
+            $('#btnA').prop('disabled', true);
+            $('#btnB').prop('disabled', true);
+        }
+        
+        if(active == false) {
             $('#btnA').prop('disabled', false);
             $('#btnB').prop('disabled', false);
         }
 
 
-        
-        
     } 
 
   </script>
