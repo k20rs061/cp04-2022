@@ -40,9 +40,11 @@
     }
     
     #btnA {
+        color: green;
         font-size: 20px;
         position:absolute; top:380px; left:2%; width:43%; height:60px; 
         background-color: yellow;
+
     }
     
     #btnB {
@@ -72,7 +74,7 @@
     button {
          background-color: blue;
          font-style: Times;
-        border-radius: 20px;
+         border-radius: 20px;
     }
 
     
