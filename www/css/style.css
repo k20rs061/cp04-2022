@@ -58,9 +58,9 @@
     
     #btnA {
         color: white;
-        font-size: 32px;
+        font-size: 25px;
         font-family: fantasy;
-        position:absolute; top:380px; left:2%; width:35%; height:60px; 
+        position:absolute; top:380px; left:1%; width:25%; height:60px; 
         background-color: gray;
 
     }
@@ -72,9 +72,9 @@
     #btnB {
         background-color: gray;
         color: white;
-        font-size: 33px;
+        font-size: 25px;
         font-family: fantasy;
-        position:absolute; top:380px; left:38%; width:31%; height:60px; 
+        position:absolute; top:380px; left:26%; width:25%; height:60px; 
     }
      #btnB::after {
         content: " ■";
@@ -82,12 +82,23 @@
     }
 
     #btnC {
-        font-size: 30px;
+        font-size: 25px;
         font-family: fantasy;
         background-color: gray;
         color: white;
-        position:absolute; top:380px; left:70%; width:28%; height:60px; 
+        position:absolute; top:380px; left:77%; width:23%; height:60px; 
     }
+
+    #btnD {
+        background-color: gray;
+        color: white;
+        font-size: 25px;
+        font-family: fantasy;
+        position:absolute; top:380px; left:51%; width:26%; height:60px; 
+    }
+
+
+
     
     #minute {
         font-size: 40px;

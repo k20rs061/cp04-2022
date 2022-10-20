@@ -38,6 +38,14 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) {
+            btnCClick(e);
+        });
+
+
+
+        
         init();
     });
     
@@ -160,7 +168,8 @@
     function init(){
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
-        //$('#btnC').prop('disabled', false);
+        $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
 
         btnCClick(null);
         
@@ -190,6 +199,11 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
+       /* if(active == true){
+            active = false;
+        } else {
+            active = true;
+        }*/
     }
 
     // ButtonCがクリックされた時の処理
@@ -202,6 +216,15 @@
         $("#remain").html("残り時間： " + period);
         
     }
+
+     // ButtonDがクリックされた時の処理
+     function btnDClick(e){
+         alarm();
+         time = 0;
+         m = 0;
+         s = 0;
+
+     }
     
  
     // 繰り返し実行する処理
@@ -224,12 +247,11 @@
 
         if(active) {
             $('#btnA').prop('disabled', true);
-            $('#btnB').prop('disabled', true);
+            //$('#btnB').prop('disabled', true);
         }
         
         if(active == false) {
             $('#btnA').prop('disabled', false);
-            $('#btnB').prop('disabled', false);
         }
 
 
@@ -247,8 +269,14 @@
     <div id="time">Time</div>
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
-    <button id="btnC">Set</button>  
-    <input type="number" id="minute" value=0 >
-    <input type="number" id="second" value=15 >
+    <button id="btnC">Set</button>
+    <button id="btnD">Reset</button>
+    <input type="number" id="minute" value=3 >
+    <input type="number" id="second" value=0 >
+
+setInterval('Time()',1000);
+  </script>
+
+
 </body>
 </html>
