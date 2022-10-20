@@ -43,6 +43,14 @@
             btnCClick(e);
         });
 
+        $('#btnE').click(function(e) {
+            btnEClick(e);
+        });
+
+        $('#btnF').click(function(e) {
+            btnFClick(e);
+        });
+
 
 
         
@@ -160,7 +168,6 @@
     var active = false;
     var startTime = 0;
     var period = 0;
-    var audioElm = new Audio("pin.wav");
 
     // ボタンの初期設定
     function init(){
@@ -168,6 +175,8 @@
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
         $('#btnD').prop('disabled', false);
+        $('#btnE').prop('disabled', false);
+        $('#btnF').prop('disabled', false);
 
         btnCClick(null);
     }
@@ -202,8 +211,8 @@
 
     // ButtonCがクリックされた時の処理
     function btnCClick(e){
-        alarm();
         active = false;
+        alarm();
         period = 60*parseInt($("#minute").val()) + 
         parseInt($("#second").val());
         $("#time").html("経過時間：0");
@@ -212,10 +221,33 @@
 
      // ButtonDがクリックされた時の処理
      function btnDClick(e){
-         time = 0;
-         m = 0;
-         s = 0;
+        active = false;
+        alarm();
+        period = 60*parseInt($("#minute1").val()) + 
+        parseInt($("#second1").val());
+        $("#time").html("経過時間：0");
+        $("#remain").html("残り時間： " + period);
      }
+    
+     // ButtonEがクリックされた時の処理
+     function btnEClick(e){
+        active = false;
+        alarm();
+        period = 60*parseInt($("#minute2").val()) + 
+        parseInt($("#second2").val());
+        $("#time").html("経過時間：0");
+        $("#remain").html("残り時間： " + period);
+    }
+
+     // ButtonFがクリックされた時の処理
+    function btnFClick(e){
+        active = false;
+        alarm();
+        period = 60*parseInt($("#minute3").val()) + 
+        parseInt($("#second3").val());
+        $("#time").html("経過時間：0");
+        $("#remain").html("残り時間： " + period);
+    }
 
     // 繰り返し実行する処理
     function timer(){  
@@ -232,7 +264,6 @@
         if(rest <= 0) {
             active = false; 
             alarm();
-            
         }
 
         if(active) {
@@ -259,10 +290,20 @@
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>
     <button id="btnD">Reset</button>
-    <input type="number" id="minute" value=3 >
-    <input type="number" id="second" value=0 >
-    }
-setInterval('Time()',1000);
+    <button id="btnE">set to 15 minutes</button>
+    <button id="btnF">set to 30 minutes</button>
+
+    <input type="number" id="minute" value = 5>
+    <input type="number" id="second" value = 0>
+
+    <input type="number" id="minute1" value = 0>
+    <input type="number" id="second1" value = 0>
+    
+    <input type="number" id="minute2" value = 15>
+    <input type="number" id="second2" value = 0>
+
+    <input type="number" id="minute3" value = 30>
+    <input type="number" id="second3" value = 0>
   </script>
 </body>
 </html>
